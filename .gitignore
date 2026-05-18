@@ -1,0 +1,43 @@
+# RetroArch user data
+.config/
+.local/
+# Cache directories
+.cache/
+# Saves and states (optional to keep, but often personal)
+saves/
+# Media downloaded by scrapers (can be regenerated)
+media/
+# BIOS files (personal/legal)
+bios/
+# Core overrides (if any)
+cores/
+# Playlists (can be regenerated)
+playlists/
+# Content history
+configs/retroarch/content_history.lpl
+# Thumbnails and cache
+thumbnails/
+# OS-specific files
+.DS_Store
+Thumbs.db
+# Temporary files
+*.tmp
+*.temp
+# Logs
+*.log
+# RetroArch config overrides (personal)
+configs/retroarch/retroarch.cfg
+# Actually we want to keep the default config, but users may override.
+# Better to ignore user-specific overrides while keeping template.
+# We'll keep the file but ignore changes to it? Instead we can keep a template.
+# Let's ignore the config file and provide an example.
+# But we already have configs/retroarch/retroarch.cfg in repo.
+# We'll ignore it to prevent overwriting with user settings.
+# However we need a default. We'll keep the file and assume users will not commit changes.
+# Instead we can add a template and ignore the actual.
+# For simplicity, we ignore the config file and rely on the one in repo.
+# Users should not commit their personal config.
+# We'll add a note in README.
+
+# Ignore the config file to avoid committing personal settings
+configs/retroarch/retroarch.cfg
