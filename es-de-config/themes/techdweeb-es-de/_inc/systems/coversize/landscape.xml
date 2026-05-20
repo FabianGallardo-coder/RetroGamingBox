@@ -1,0 +1,51 @@
+<theme>
+   <variant name="
+      gamelist-carousel-cover,
+      gamelist-carousel-cover-name
+      ">
+      <aspectRatio name="16:9,16:10">
+         <view name="gamelist">
+            <carousel name="gamelist-carousel">
+               <itemSize>0.260416666666667 0.347222222222222</itemSize><!-- 500 375 -->
+               <selectedItemMargins>0.052083333333333 0.052083333333333</selectedItemMargins><!-- 100 100 -->
+               <maxItemCount>3</maxItemCount>
+               <itemScale>1.6</itemScale>
+            </carousel>
+         </view>
+      </aspectRatio>
+      <aspectRatio name="4:3,3:2,8:7,1:1">
+         <view name="gamelist">
+            <carousel name="gamelist-carousel">
+               <itemSize>0.347222222222222 0.347222222222222</itemSize><!-- 500 375 -->
+               <selectedItemMargins>0.104166666666667 0.104166666666667</selectedItemMargins><!-- 150 150 -->
+               <maxItemCount>2.5</maxItemCount>
+               <itemScale>1.6</itemScale>
+            </carousel>
+         </view>
+      </aspectRatio>
+   </variant>
+   <variant name="
+      gamelist-carousel-screenshot-name
+      ">
+      <aspectRatio name="16:9,16:10">
+         <view name="gamelist">
+            <carousel name="gamelist-carousel">
+               <itemSize>0.260416666666667 0.347222222222222</itemSize><!-- 500 375 -->
+               <selectedItemMargins>0.06510417 0.06510417</selectedItemMargins><!-- 125 125 -->
+               <maxItemCount>4</maxItemCount>
+               <itemScale>1.6</itemScale>
+            </carousel>
+         </view>
+      </aspectRatio>
+      <aspectRatio name="4:3,3:2,8:7,1:1">
+         <view name="gamelist">
+            <carousel name="gamelist-carousel">
+               <itemSize>0.347222222222222 0.347222222222222</itemSize><!-- 500 375 -->
+               <selectedItemMargins>0.086805555555556 0.086805555555556</selectedItemMargins><!-- 125 125 -->
+               <maxItemCount>3.5</maxItemCount>
+               <itemScale>1.6</itemScale>
+            </carousel>
+         </view>
+      </aspectRatio>
+   </variant>
+</theme>

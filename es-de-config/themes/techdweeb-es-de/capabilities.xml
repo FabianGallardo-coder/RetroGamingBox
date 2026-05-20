@@ -1,0 +1,111 @@
+<themeCapabilities>
+   
+   <themeName>TechDweeb</themeName>
+
+   <!--
+   ///
+   Aspect Ratios
+   ///
+   -->
+   <aspectRatio>16:9</aspectRatio>
+   <aspectRatio>16:10</aspectRatio>
+   <aspectRatio>3:2</aspectRatio>
+   <aspectRatio>4:3</aspectRatio>
+   <aspectRatio>8:7</aspectRatio>
+   <aspectRatio>1:1</aspectRatio>
+
+   <!--
+   ///
+   Font Size
+   ///
+   -->
+   <fontSize>small</fontSize>
+   <fontSize>medium</fontSize>
+   <fontSize>large</fontSize>
+
+   <!--
+   ///
+   Color Schemes
+   ///
+   -->
+   <colorScheme name="orange">
+      <label>Orange Stuff</label>
+   </colorScheme>
+   <colorScheme name="purple">
+      <label>Purple Slime</label>
+   </colorScheme>
+   <colorScheme name="cyan">
+      <label>Aqua Slush</label>
+   </colorScheme>
+   <colorScheme name="green">
+      <label>Green Ooze</label>
+   </colorScheme>
+   <colorScheme name="pink">
+      <label>Pink Fluff</label>
+   </colorScheme>
+   <colorScheme name="blue">
+      <label>Blue Goo</label>
+   </colorScheme>
+   <colorScheme name="red">
+      <label>Red Squish</label>
+   </colorScheme>
+   <colorScheme name="grey">
+      <label>Grey Gunk</label>
+   </colorScheme>
+   <colorScheme name="dmg">
+      <label>DMG Dungeon</label>
+   </colorScheme>
+   <colorScheme name="black">
+      <label>Black Sludge</label>
+   </colorScheme>
+   <colorScheme name="custom">
+      <label>Custom Chaos (see README first)</label>
+   </colorScheme>
+
+   <!--
+   ///
+   Transitions
+   ///
+   -->
+   <transitions name="transitions">
+      <label>transitions</label>
+      <selectable>false</selectable>
+      <systemToSystem>instant</systemToSystem>
+      <systemToGamelist>slide</systemToGamelist>
+      <gamelistToGamelist>slide</gamelistToGamelist>
+      <gamelistToSystem>slide</gamelistToSystem>
+      <startupToSystem>slide</startupToSystem>
+      <startupToGamelist>slide</startupToGamelist>
+   </transitions>
+
+   <!--
+   ///
+   Variants
+   ///
+   -->
+   <variant name="gamelist-list-metadata-screenshot-marquee">
+      <label>List: Metadata, Screenshot &amp; Marquee</label>
+      <selectable>true</selectable>
+   </variant>
+   <variant name="gamelist-list-metadata-screenshot-cover">
+      <label>List: Metadata, Screenshot &amp; Boxart</label>
+      <selectable>true</selectable>
+   </variant>
+   <variant name="gamelist-list-screenshot">
+      <label>List: Screenshot</label>
+      <selectable>true</selectable>
+   </variant>
+   <variant name="gamelist-carousel-cover">
+      <label>Carousel: Boxart</label>
+      <selectable>true</selectable>
+   </variant>
+   <variant name="gamelist-carousel-cover-name">
+      <label>Carousel: Boxart &amp; Name</label>
+      <selectable>true</selectable>
+   </variant>
+   <variant name="gamelist-carousel-screenshot-name">
+      <label>Carousel: Screenshot &amp; Name</label>
+      <selectable>true</selectable>
+   </variant>
+
+</themeCapabilities>

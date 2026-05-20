@@ -1,0 +1,21 @@
+<theme>
+   <colorScheme name="custom">
+      <variables>
+         <systemLogoColor>ffffff</systemLogoColor>
+         <systemBackgroundImage>./_inc/images/system-view/grey.png</systemBackgroundImage>
+         <systemBackgroundImageColor>ffffff</systemBackgroundImageColor>
+         <systemBackgroundImageSaturation>1</systemBackgroundImageSaturation>
+         <systemBackgroundImageBrightness>0</systemBackgroundImageBrightness>
+         <gamelistOverlayColor>131313</gamelistOverlayColor>
+         <gamelistOverlayShadowColor>000000</gamelistOverlayShadowColor>
+         <gamelistBackgroundColor>0a0a0a</gamelistBackgroundColor>
+         <gamelistTextlistPrimaryColor>909090</gamelistTextlistPrimaryColor>
+         <gamelistTextlistSecondaryColor>909090</gamelistTextlistSecondaryColor>
+         <gamelistTextlistSelectorColor>4d4b4b</gamelistTextlistSelectorColor>
+         <gamelistTextlistSelectedColor>ffffff</gamelistTextlistSelectedColor>
+         <gamelistMetadataLabelColor>ffffff</gamelistMetadataLabelColor>
+         <gamelistMetadataColor>909090</gamelistMetadataColor>
+         <gamelistRatingColor>909090</gamelistRatingColor>
+      </variables>
+   </colorScheme>
+</theme>
