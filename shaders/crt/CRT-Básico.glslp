@@ -1,0 +1,6 @@
+shaders = 1
+shader0 = shaders/crt/crtsimple.glsl
+filter = nearest
+scale_type_x = viewport
+scale_type_y = viewport
+scale = 1.0

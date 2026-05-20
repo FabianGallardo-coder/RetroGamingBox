@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+    <format_version>4</format_version>
+    <view name="system">
+        <header><text name="systemName">{system.name}</text></header>
+        <grid name="gamegrid"><itemSize>0.18 0.28</itemSize><padding>0.015</padding></grid>
+    </view>
+    <variables>
+        <menuBackground>#101010</menuBackground>
+        <menuText>#ffffff</menuText>
+        <primaryColor>#0070d1</primaryColor>
+        <selectedColor>#00d4ff</selectedColor>
+    </variables>
+</theme>

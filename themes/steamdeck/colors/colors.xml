@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+    <color name="menuBackground">#1a1a2e</color>
+    <color name="menuText">#ffffff</color>
+    <color name="primary">#4a9eff</color>
+    <color name="selected">#00d9ff</color>
+    <color name="background">#0f0f1a</color>
+    <color name="gameBackground">#16213e</color>
+</theme>

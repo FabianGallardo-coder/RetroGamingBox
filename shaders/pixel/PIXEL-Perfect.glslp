@@ -1,0 +1,4 @@
+shaders = 0
+filter = nearest
+scale_type_x = source
+scale_type_y = source

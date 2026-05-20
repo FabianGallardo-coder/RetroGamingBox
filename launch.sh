@@ -1,10 +1,31 @@
 #!/bin/bash
-# RetroGamingBox launch script
-# Uses RetroArch with Ozone frontend (Batocera-like experience)
+# =====================================================
+# LAUNCH.SH - Launcher principal de RetroGamingBox
+# =====================================================
 
-# Set the home directory to our box's directory for portable config
-export HOME="$PWD"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+RETROGAMING_DIR="$SCRIPT_DIR"
 
-# Launch RetroArch with our configuration
-# The config file will be automatically loaded from configs/retroarch/retroarch.cfg
-exec retroarch --config "$PWD/configs/retroarch/retroarch.cfg"
+# Cargar configuración de entorno
+export RETROGAMING_DIR="$SCRIPT_DIR"
+export XDG_CONFIG_HOME="$SCRIPT_DIR/configs"
+
+# Usar config portable de RetroArch
+export RETROARCH_CONFIG="$SCRIPT_DIR/configs/retroarch/retroarch.cfg"
+
+# Verificar si RetroArch está instalado
+if ! command -v retroarch &> /dev/null; then
+    echo "ERROR: RetroArch no está instalado"
+    echo "Instálalo con: sudo apt install retroarch"
+    exit 1
+fi
+
+# Verificar si existe la config
+if [ ! -f "$RETROARCH_CONFIG" ]; then
+    echo "ERROR: No se encontró configuración: $RETROARCH_CONFIG"
+    exit 1
+fi
+
+# Lanzar RetroArch con la config portable
+echo "Iniciando RetroGamingBox..."
+exec retroarch -c "$RETROARCH_CONFIG"

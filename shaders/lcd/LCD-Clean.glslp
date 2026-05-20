@@ -1,0 +1,6 @@
+shaders = 1
+shader0 = shaders/lcd/lcdclean.glsl
+filter = linear
+scale_type_x = source
+scale_type_y = source
+scale = 1.0

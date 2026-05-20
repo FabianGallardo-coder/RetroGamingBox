@@ -1,43 +1,78 @@
-# RetroArch user data
-.config/
-.local/
-# Cache directories
-.cache/
-# Saves and states (optional to keep, but often personal)
+# =====================================================
+# RetroGamingBox .gitignore
+# =====================================================
+
+# Cores libretro (se descargan con install_cores.sh)
+cores/*.so
+cores/*.info
+
+# BIOS (legales pero no incluirlos por tamaño)
+bios/*
+!bios/.gitkeep
+
+# Saves y states (personal, no incluir)
 saves/
-# Media downloaded by scrapers (can be regenerated)
-media/
-# BIOS files (personal/legal)
-bios/
-# Core overrides (if any)
-cores/
-# Playlists (can be regenerated)
-playlists/
-# Content history
-configs/retroarch/content_history.lpl
-# Thumbnails and cache
-thumbnails/
-# OS-specific files
-.DS_Store
-Thumbs.db
-# Temporary files
+*.sav
+*.state*
+*.png (savestates)
+
+# Logs
+logs/*.log
+*.log
+
+# Cache y temporales
+__pycache__/
+*.pyc
+*.pyo
 *.tmp
 *.temp
-# Logs
-*.log
-# RetroArch config overrides (personal)
-configs/retroarch/retroarch.cfg
-# Actually we want to keep the default config, but users may override.
-# Better to ignore user-specific overrides while keeping template.
-# We'll keep the file but ignore changes to it? Instead we can keep a template.
-# Let's ignore the config file and provide an example.
-# But we already have configs/retroarch/retroarch.cfg in repo.
-# We'll ignore it to prevent overwriting with user settings.
-# However we need a default. We'll keep the file and assume users will not commit changes.
-# Instead we can add a template and ignore the actual.
-# For simplicity, we ignore the config file and rely on the one in repo.
-# Users should not commit their personal config.
-# We'll add a note in README.
+.cache/
+.temp/
 
-# Ignore the config file to avoid committing personal settings
+# ROMs (no incluir en el repo)
+roms/
+/home/
+
+# Medien downloaded
+media/downloads/
+media/videos/
+media/music/
+
+# Configuración personal de RetroArch
 configs/retroarch/retroarch.cfg
+
+# Configuración personal de ES-DE
+.config/es-de/
+.local/share/es-de/
+
+# Imágenes de scraper (regenerables)
+thumbnails/
+
+# Python scripts de pruebas
+check_archives.py
+dry_run_*.py
+final_organizer*.py
+organize_roms.py
+rom_organizer*.py
+test_extract.py
+prometheus
+
+# Archivos de salida de pruebas
+dry_run_*.txt
+dry_run_*.log
+dry_run_summary.py
+problematic_archives.csv
+organization.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# git
+.git/
+.gitignore
+
+# AppImage de ES-DE (se descarga con install_esde.sh)
+es-de/*.AppImage
+es-de/*.txt
+es-de/*.desktop

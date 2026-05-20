@@ -1,111 +1,281 @@
 # RetroGamingBox
 
-A portable, self-contained retro gaming system based on RetroArch with Ozone frontend (Batocera-like experience) that runs on Linux Mint/Ubuntu.
+## Tu Consola de Gaming Portable para Linux Mint
 
-## Features
+Transformando Linux Mint 22.3 con Cinnamon en una RetroGamingBox profesional estilo Batocera/Steam Deck, usando **RetroArch** y **ES-DE** (EmulationStation Desktop Edition).
 
-- RetroArch core emulator system
-- Ozone modern grid frontend (resembles Batocera/EmulationStation)
-- Keyboard-optimized controls (works with wireless keyboard)
-- Performance-optimized for Intel Iris Xe graphics
-- Automatic save state management
-- Portable directory structure
-- Ready for GitHub open-source distribution
+---
 
-## Directory Structure
+## Características
+
+- ✅ **Configuración Portable** - Todo en una carpeta, sin modificar el sistema
+- ✅ **Multi-Sistema** - Soporte para 50+ sistemas (NES, SNES, GBA, Genesis, PS1, Arcade, etc.)
+- ✅ **ES-DE Frontend** - Interfaz moderna estilo consola
+- ✅ **Cores Libretro** - 13 cores preinstalados, optimizados para Intel Iris Xe
+- ✅ **Themes Intercambiables** - Steam Deck, PS5, Nintendo Switch
+- ✅ **Shaders** - CRT, LCD, Pixel-perfect (cambiables)
+- ✅ **Scraper Automático** - ScreenScraper + TheGamesDB
+- ✅ **Guardado Portable** - Saves en `/home/fabian/ROMs_Archive/saves/`
+
+---
+
+## Estructura
 
 ```
 RetroGamingBox/
-├── bios/               # System BIOS/firmware files
 ├── configs/
-│   ├── emulationstation/ # (Optional) EmulationStation configs
-│   └── retroarch/        # RetroArch configuration
-├── cores/              # Libretro cores (optional, uses system by default)
-├── media/              # Screenshots, boxart, etc.
-│   └── screenshots/
-├── roms/               # Your game ROMs, organized by system
-│   ├── nes/
-│   ├── snes/
-│   ├── genesis/
-│   ├── gb/
-│   ├── gbc/
-│   ├── gba/
-│   ├── ps1/
-│   ├── n64/
-│   ├── psp/
-│   └── dreamcast/
-├── saves/              # Save files and states
-├── shaders/            # Video shaders (optional)
-├── launch.sh           # Launch script
-└── README.md
+│   ├── retroarch/       # Configuración portable de RetroArch
+│   └── es-de/           # Configuración de ES-DE
+├── cores/               # Cores libretro
+├── themes/              # 3 themes (steamdeck, ps5, switch)
+├── shaders/             # Shaders CRT, LCD, Pixel-perfect
+├── overlays/            # Overlays y bezels
+├── bios/                # Carpeta para BIOS
+├── media/               # Recursos multimedia
+├── scripts/             # Scripts de gestión
+│   ├── start_retrobox.sh    # Launcher modo consola
+│   ├── switch_shader.sh     # Cambiar shaders
+│   ├── switch_theme.sh      # Cambiar themes
+│   ├── install_cores.sh     # Re-instalar cores
+│   ├── install_shaders.sh   # Re-instalar shaders
+│   └── scraper.sh           # Scraper automático
+├── saves/               # Enlaces a saves
+├── launch.sh            # Script principal de lanzamiento
+└── README.md            # Este archivo
 ```
 
-## Quick Start
+---
 
-1. **Install dependencies** (run once):
-   ```bash
-   sudo apt update
-   sudo apt install -y retroarch libretro-* vulkan-tools unclutter
-   ```
+## Requisitos
 
-2. **Add your ROMs** to the appropriate system folders:
-   ```
-   ~/RetroGamingBox/roms/snes/Super\ Mario\ World.sfc
-   ~/RetroGamingBox/roms/genesis/Sonic\ The\ Hedgehog.md
-   ```
+- **OS:** Linux Mint 22.3 (Ubuntu 24.04) o similar
+- **GPU:** Intel Iris Xe (o cualquier GPU con soporte OpenGL)
+- **RAM:** 4GB mínimo (8GB recomendado)
+- **Espacio:** 500MB para configs + espacio para ROMs
 
-3. **(Optional) Download BIOS files** if required by certain systems (PS1, N64, etc.) and place them in `bios/`
+### Dependencias
 
-4. **Launch the system**:
-   ```bash
-   cd ~/RetroGamingBox
-   ./launch.sh
-   ```
+```bash
+sudo apt install retroarch libretro-cores ffmpeg p7zip-full unclutter
+```
 
-5. **Controls** (keyboard):
-   - A: `X`
-   - B: `Z`
-   - Y: `A`
-   - X: `S`
-   - L: `Q`
-   - R: `W`
-   - Start: `Enter`
-   - Select: `Right Shift`
-   - D-Pad: Arrow keys
-   - Exit RetroArch: Press `Select + Start` (Right Shift + Enter)
+---
 
-## Optional: EmulationStation Frontend
+## Instalación Rápida
 
-If you prefer EmulationStation over RetroArch's Ozone menu:
+### 1. Clonar o descargar este repositorio
 
-1. Install EmulationStation via RetroPie script or compile from source (see notes below)
-2. Replace the launch.sh content with:
-   ```bash
-   #!/bin/bash
-   cd "$(dirname "$0")"
-   export HOME="$PWD"
-   exec emulationstation --no-splash
-   ```
-3. Configure EmulationStation to use your ROMs directory
+```bash
+cd /home/fabian
+git clone https://github.com/tu-usuario/RetroGamingBox.git
+cd RetroGamingBox
+```
 
-## Performance Optimizations
+### 2. Hacer ejecutables los scripts
 
-- Video driver: OpenGL (best for Intel Iris Xe)
-- Integer scaling enabled (crisp pixel perfect)
-- Threaded video/audio/input for better multi-core usage
-- Governor management script available (see scripts/ folder)
+```bash
+chmod +x scripts/*.sh launch.sh
+```
 
-## Legal Notice
+### 3. Organizar tus ROMs
 
-This system is for playing games you legally own. Downloading ROMs for games you do not own is illegal in many jurisdictions. Please respect copyright laws.
+Coloca tus ROMs en `/home/fabian/ROMs_Archive/`:
 
-## Credits
+```
+/home/fabian/ROMs_Archive/
+├── snes/
+├── nes/
+├── gbc/
+├── gba/
+├── genesis/
+├── n64/
+├── psx/
+├── dreamcast/
+├── mame/
+├── arcade/
+└── saves/
+    ├── snes/
+    ├── nes/
+    └── ...
+```
 
-- RetroArch team for the amazing emulator core
-- Libretro developers for all the cores
-- Ozone menu developers for the modern frontend
-- Inspired by Batocera, Lakka, and RetroPie
+### 4. Lanzar
 
-## License
+```bash
+./launch.sh                    # Lanzar RetroArch directamente
+./scripts/start_retrobox.sh    # Launcher modo consola (menú interactivo)
+```
 
-MIT License - see LICENSE file
+---
+
+## Uso
+
+### Scripts Principales
+
+```bash
+./launch.sh                    # Iniciar RetroArch
+./scripts/start_retrobox.sh     # Menú modo consola
+./scripts/switch_shader.sh crt # Activar shader CRT
+./scripts/switch_shader.sh lcd # Activar shader LCD
+./scripts/switch_shader.sh pixel  # Pixel-perfect
+./scripts/switch_theme.sh ps5  # Cambiar a theme PS5
+```
+
+### Controles de RetroArch
+
+| Acción | Tecla |
+|--------|-------|
+| Menú | F1 |
+| Guardar Estado | F3 |
+| Cargar Estado | F2 |
+| Fast Forward | F7 |
+| Rewind | F6 |
+| Salir | Escape |
+
+| Acción | Tecla Alternativa |
+|--------|-------------------|
+| Aceptar/Saltar | Z |
+| Retroceder/Atrás | X |
+| Arriba/Abajo | Flechas |
+| Menú Quick | Enter |
+
+---
+
+## Sistemas Soportados
+
+| Sistema | Core | Extensiones |
+|---------|------|-------------|
+| NES | Mesen, Nestopia | .nes, .fds |
+| SNES | Snes9x, bsnes | .sfc, .smc, .fig, .swc |
+| GB/GBC | Gambatte, SameBoy | .gb, .gbc |
+| GBA | mGBA, VBA-M | .gba |
+| Genesis | Genesis Plus GX | .md, .smd, .gen, .bin |
+| N64 | Mupen64Plus-Next | .n64, .v64, .z64 |
+| PS1 | Beetle PSX HW, SwanStation | .cue, .bin, .img, .pbp |
+| Dreamcast | Flycast | .cdi, .gdi, .chd |
+| PSP | PPSSPP | .iso, .cso |
+| Arcade | FBNeo, MAME 2003+ | .zip |
+| Saturn | Beetle Saturn | .iso |
+| GC/Wii | Dolphin | .iso, .gcm, .wad |
+| DS | MelonDS, DeSmuME | .nds |
+| Atari 2600 | Stella | .a26, .a52, .bin |
+
+---
+
+## Configuración
+
+### Rutas
+
+| Recurso | Ruta |
+|---------|------|
+| ROMs | `/home/fabian/ROMs_Archive/` |
+| Saves | `/home/fabian/ROMs_Archive/saves/` |
+| Cores | `/home/fabian/RetroGamingBox/cores/` |
+| Config | `/home/fabian/RetroGamingBox/configs/` |
+
+### Shaders
+
+- **CRT (para TV):** `./scripts/switch_shader.sh crt`
+- **LCD (para monitores):** `./scripts/switch_shader.sh lcd`
+- **Pixel-Perfect:** `./scripts/switch_shader.sh pixel`
+- **Off:** `./scripts/switch_shader.sh off`
+
+### Themes ES-DE
+
+- **Steam Deck (default):** Oscuro, minimalista
+- **PS5:** Moderno, gradientes azules
+- **Nintendo Switch:** Colores vibrantes
+
+Para instalar themes en ES-DE:
+```bash
+./scripts/switch_theme.sh steamdeck  # Instalar theme Steam Deck
+```
+
+---
+
+## Scraper
+
+Generar metadata automática:
+
+```bash
+# Scrapear todos los sistemas
+./scripts/scraper.sh all
+
+# Scrapear un sistema específico
+./scripts/scraper.sh snes
+./scripts/scraper.sh psx
+
+# Forzar re-scraping
+./scripts/scraper.sh force
+```
+
+---
+
+## Optimización
+
+El script `start_retrobox.sh` optimiza automáticamente:
+
+1. **CPU:** Establece governor a `performance`
+2. **GPU:** Activa modo rendimiento
+3. **Sistema:** Cierra apps innecesarias
+4. **Cursor:** Oculta cursor automáticamente
+
+---
+
+## Solución de Problemas
+
+### "EmulationStation no encontrado"
+
+Instala ES-DE manualmente:
+1. Descarga desde https://es-de.org
+2. Instala el .deb: `sudo dpkg -i emulationstation-de-*.deb`
+
+### "Cores no cargan"
+
+Verifica que los cores estén en:
+```bash
+ls /home/fabian/RetroGamingBox/cores/
+```
+
+### "Shaders no funcionan"
+
+Los shaders deben estar en formato `.glslp`. Verifica:
+```bash
+ls /home/fabian/RetroGamingBox/shaders/*/
+```
+
+---
+
+## Contribuir
+
+1. Fork el repositorio
+2. Crea una rama (`git checkout -b feature/nueva-funcion`)
+3. Commit cambios (`git commit -m 'Agregar nueva función'`)
+4. Push a la rama (`git push origin feature/nueva-funcion`)
+5. Abre un Pull Request
+
+---
+
+## Licencia
+
+Este proyecto es de código abierto bajo licencia MIT. Puedes usarlo, modificarlo y distribuirlo libremente.
+
+---
+
+## Créditos
+
+- **RetroArch:** https://www.retroarch.com/
+- **ES-DE:** https://es-de.org/
+- **Libretro Cores:** https://buildbot.libretro.com/
+- **Temas:** Comunidades de ES-DE y libretro
+
+---
+
+## Contacto
+
+- GitHub Issues: Para reportar bugs
+- Discord: [Link del servidor]
+
+---
+
+**¡Disfruta tu RetroGamingBox!** 🎮
