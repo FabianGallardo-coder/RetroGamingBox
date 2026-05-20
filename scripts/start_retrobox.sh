@@ -113,20 +113,15 @@ restore_system() {
 start_esde() {
     log "Iniciando ES-DE (EmulationStation Desktop Edition)..."
 
-    # Verificar que ES-DE esté instalado
-    if ! command -v emulationstation &> /dev/null; then
-        log_warning "ES-DE no está instalado"
-        echo "¿Quieres instalarlo ahora? (s/n)"
-        read -r response
-        if [ "$response" = "s" ] || [ "$response" = "S" ]; then
-            ./scripts/install_esde.sh
-        else
-            return 1
-        fi
+    ES_DE_APPIMAGE="$RETROGAMING_DIR/es-de/ES-DE_x64.AppImage"
+
+    if [ ! -f "$ES_DE_APPIMAGE" ]; then
+        log_error "ES-DE AppImage no encontrado: $ES_DE_APPIMAGE"
+        return 1
     fi
 
-    # Lanzar ES-DE en fullscreen
-    emulationstation --fullscreen 2>> "$LOG_FILE"
+    chmod +x "$ES_DE_APPIMAGE" 2>/dev/null || true
+    "$ES_DE_APPIMAGE" 2>> "$LOG_FILE"
 }
 
 start_retroarch() {
